@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="en-US">
+    <meta name="geo.region" content="US,CA">
+    <meta name="geo.placename" content="United States, Canada">
+    <meta name="description" content="Free printable coloring pages for kids (3-12), teens & adults. Find educational sheets, stress relief designs, and popular themes like unicorn, Pokemon & Christmas. No sign-up required.">
+    <meta name="keywords" content="printable coloring pages, free coloring sheets, adult coloring pages, kids coloring pages, unicorn coloring, pokemon coloring sheets, christmas coloring pages">
+    <meta name="robots" content="index, follow">
+    <!-- 技术SEO: 添加canonical标签 -->
+    <link rel="canonical" href="https://coloringpagesprintable.online/">
+    <!-- 引用robots和sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://coloringpagesprintable.online/sitemap.xml">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Printable Coloring Pages | For Kids, Teens & Adults (US/CA)">
+    <meta property="og:description" content="Download free coloring pages printable—no sign-up. Educational sheets for 5 year olds, stress relief designs for adults, and popular themes for all ages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coloringpagesprintable.online/">
+    <meta property="og:image" content="https://coloringpagesprintable.online/images/featured-coloring-pages.jpg">
+    <meta property="og:image:alt" content="Collection of free printable coloring pages for kids and adults">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Printable Coloring Pages (US/CA)">
+    <meta name="twitter:description" content="Free coloring sheets for kids (3-12), teens & adults. Educational, stress relief, and popular themes—no sign-up required.">
+    <meta name="twitter:image" content="https://coloringpagesprintable.online/images/featured-coloring-pages.jpg">
+    <meta name="twitter:creator" content="@ColoringPagesUS">
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B35', // US/CA family-friendly warm orange
+                        secondary: '#4285F4', // Trusted blue for CTAs
+                        neutral: '#F9F7F3', // Soft background for readability
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto { content-visibility: auto; }
+            .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .hover-lift { transition: transform 0.3s ease; }
+            .hover-lift:hover { transform: translateY(-5px); }
+            .free-badge {
+                @apply absolute top-3 right-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full;
+            }
+            /* 移动端优化：增大点击区域 */
+            .filter-button {
+                @apply px-4 py-2 min-h-[44px] min-w-[44px];
+            }
+            /* 无障碍适配：减少动画 */
+            @media (prefers-reduced-motion: reduce) {
+                .hover-lift { transition: transform 0.1s ease; }
+                * { animation-duration: 0.001s !important; animation-iteration-count: 1 !important; }
+            }
+        }
+    </style>
+    <!-- Schema Markup (FAQ + Organization) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Coloring Pages Printable",
+        "url": "https://coloringpagesprintable.online/",
+        "logo": "https://coloringpagesprintable.online/images/logo.png",
+        "areaServed": [{"@type": "Country","name": "United States"},{"@type": "Country","name": "Canada"}],
+        "contactPoint": {"@type": "ContactPoint","telephone": "+1-555-123-4567","contactType": "customer service","availableLanguage": "English"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are your coloring pages printable free to download?",
+                "acceptedAnswer": {"@type": "Answer","text": "Yes! All coloring pages on our site are 100% free to download and print—no sign-up, registration, or payment required. Simply click the 'Download PDF' button on any resource page."}
+            },
+            {
+                "@type": "Question",
+                "name": "What size are the printable coloring pages?",
+                "acceptedAnswer": {"@type": "Answer","text": "Our coloring pages are optimized for US standard 8.5x11 inch paper (the most common size for home/office printers in the US and Canada). You can adjust print settings to fit A4 if needed."}
+            },
+            {
+                "@type": "Question",
+                "name": "Do you have coloring pages for kids and adults?",
+                "acceptedAnswer": {"@type": "Answer","text": "Absolutely! We have a dedicated section for kids (ages 3-12) with easy, educational designs, a teen section with popular IP themes (Pokemon, Sonic), and an adult section with complex mandalas and stress-relief patterns."}
+            },
+            {
+                "@type": "Question",
+                "name": "Can I upload my own image to make a custom coloring page?",
+                "acceptedAnswer": {"@type": "Answer","text": "Yes! Use our 'Custom Coloring Page Maker' tool to upload your own image (photos, drawings) and convert it into a printable coloring page—free to use, no design skills needed."}
+            },
+            {
+                "@type": "Question",
+                "name": "Are the coloring pages good for educational use?",
+                "acceptedAnswer": {"@type": "Answer","text": "Yes! Many of our kids' coloring pages are labeled with learning skills (e.g., 'Letter Recognition', 'Math: Addition')—perfect for classrooms, homeschooling, or at-home learning in the US and Canada."}
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="font-inter bg-neutral text-gray-800">
+    <!-- Header (Sticky + Responsive) -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo (SEO + Branding) -->
+                <a href="https://coloringpagesprintable.online/" class="flex items-center space-x-2">
+                    <i class="fa-solid fa-palette text-primary text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-900">ColoringPagesPrintable</span>
+                </a>
+                <!-- Desktop Navigation (Keyword-Rich) -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#popular" class="font-medium text-gray-700 hover:text-primary transition-colors">Popular Printables</a>
+                    <a href="#for-kids" class="font-medium text-gray-700 hover:text-primary transition-colors">For Kids</a>
+                    <a href="#for-adults" class="font-medium text-gray-700 hover:text-primary transition-colors">For Adults</a>
+                    <a href="#custom-maker" class="font-medium text-gray-700 hover:text-primary transition-colors">Custom Coloring</a>
+                    <a href="/free-printables" class="font-medium text-primary font-semibold">Free Downloads</a>
+                    <!-- CTA Button -->
+                    <a href="/free-printables" class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg transition-colors">
+                        <i class="fa-solid fa-download mr-2"></i> Free PDFs
+                    </a>
+                </nav>
+                <!-- Mobile Menu Button + Search -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Box (Keyword联想) -->
+                    <div class="relative hidden sm:block">
+                        <input type="text" id="search-input" placeholder="Search coloring pages..." 
+                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all"
+                               onkeyup="searchSuggestions()">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <!-- Search Suggestions -->
+                        <div id="search-suggestions" class="absolute left-0 right-0 top-full mt-1 bg-white rounded-lg shadow-lg hidden z-10">
+                            <ul id="suggestion-list" class="py-2">
+                                <!-- 搜索建议将通过JS动态生成 -->
+                            </ul>
+                        </div>
+                    </div>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <nav class="space-y-3">
+                    <a href="#popular" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">Popular Printables</a>
+                    <a href="#for-kids" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">For Kids</a>
+                    <a href="#for-adults" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">For Adults</a>
+                    <a href="#custom-maker" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">Custom Coloring</a>
+                    <a href="/free-printables" class="block font-medium text-primary font-semibold py-2">Free Downloads</a>
+                    <!-- Mobile Search -->
+                    <div class="relative mt-3">
+                        <input type="text" placeholder="Search coloring pages..." 
+                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <a href="/free-printables" class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg text-center transition-colors mt-2">
+                        <i class="fa-solid fa-download mr-2"></i> Free PDFs
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Core Keyword Focus) -->
+    <section class="bg-gradient-to-r from-primary/10 to-secondary/10 py-12 md:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-gray-900 leading-tight text-shadow">
+                        Free <span class="text-primary">Printable Coloring Pages</span> for Everyone
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 max-w-lg">
+                        Download 100% free coloring sheets for kids (3-12), teens, and adults—no sign-up. Popular themes: unicorn, Pokemon, Christmas, and educational designs optimized for US 8.5x11 inch printers.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/free-printables?audience=kids" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all">
+                            <i class="fa-solid fa-child mr-2"></i> Kids Coloring Pages
+                        </a>
+                        <a href="/free-printables?audience=adults" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                            <i class="fa-solid fa-user mr-2"></i> Adult Designs
+                        </a>
+                    </div>
+                    <!-- Trust Signals -->
+                    <div class="flex items-center space-x-4 pt-2">
+                        <div class="flex -space-x-2">
+                            <img src="https://picsum.photos/seed/user1/40/40" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/seed/user2/40/40" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/seed/user3/40/40" alt="User" class="w-8 h-8 rounded-full border-2 border-white">
+                            <div class="w-8 h-8 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-600">
+                                5k+
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">Trusted by parents and teachers in the US & Canada</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-xl">
+                    <img 
+                        src="https://coloringpagesprintable.online/images/featured-coloring-pages.jpg" 
+                        alt="Free printable coloring pages collection—unicorn, Pokemon, and Christmas themes for kids and adults" 
+                        class="w-full h-auto object-cover hover-lift"
+                        loading="lazy">
+                    <span class="free-badge">100% Free</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Printables (High-Search Keywords) -->
+    <section id="popular" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Popular Coloring Pages</h2>
+                <p class="text-lg text-gray-700">Our most downloaded free printable coloring sheets—sorted by US/CA user favorites</p>
+                <!-- Multi-Dimension Filter (受众+主题+难度) -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <select id="audience-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none filter-button">
+                        <option value="all">All Audiences</option>
+                        <option value="kids">Kids (3-12)</option>
+                        <option value="teens">Teens (13-17)</option>
+                        <option value="adults">Adults</option>
+                    </select>
+                    <select id="theme-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none filter-button">
+                        <option value="all">All Themes</option>
+                        <option value="unicorn">Unicorn</option>
+                        <option value="pokemon">Pokemon</option>
+                        <option value="mandala">Mandala</option>
+                        <option value="christmas">Christmas</option>
+                        <option value="educational">Educational</option>
+                    </select>
+                    <select id="difficulty-filter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none filter-button">
+                        <option value="all">All Difficulties</option>
+                        <option value="easy">Easy (Ages 3-6)</option>
+                        <option value="medium">Medium (Ages 7-12)</option>
+                        <option value="hard">Hard (Teens & Adults)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Popular Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Unicorn (1M+ searches) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
+                    <span class="free-badge">Free</span>
+                    <img 
+                        src="https://coloringpagesprintable.online/images/unicorn-coloring-page.jpg" 
+                        alt="Free printable unicorn coloring page for kids—easy design, 8.5x11 inch" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-medium bg-pink-100 text-pink-700 px-2 py-1 rounded">Kids (Easy)</span>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fa-solid fa-star"></i>
+                                <span class="text-sm ml-1">4.9 (1.2k reviews)</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Unicorn Magic Coloring Page</h3>
+                        <p class="text-gray-600 text-sm mb-4">Easy unicorn design with sparkles—perfect for ages 3-7.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="/free-printables/unicorn-magic" class="text-primary font-medium hover:underline flex items-center">
+                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <span class="text-xs text-gray-500">8.5x11 in</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: Pokemon (500k searches) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
+                    <span class="free-badge">Free</span>
+                    <img 
+                        src="https://coloringpagesprintable.online/images/pokemon-coloring-page.jpg" 
+                        alt="Free printable Pokemon coloring page for teens—Pikachu design, 8.5x11 inch" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-medium bg-blue-100 text-blue-700 px-2 py-1 rounded">Teens (Medium)</span>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fa-solid fa-star"></i>
+                                <span class="text-sm ml-1">4.8 (980 reviews)</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Pikachu Pokemon Coloring Page</h3>
+                        <p class="text-gray-600 text-sm mb-4">Official Pikachu design for Pokemon fans ages 10+.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="/free-printables/pikachu-pokemon" class="text-primary font-medium hover:underline flex items-center">
+                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <span class="text-xs text-gray-500">8.5x11 in</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: Mandala (300k searches) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
+                    <span class="free-badge">Free</span>
+                    <img 
+                        src="https://coloringpagesprintable.online/images/mandala-coloring-page.jpg" 
+                        alt="Free printable mandala coloring page for adults—stress relief design" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-medium bg-purple-100 text-purple-700 px-2 py-1 rounded">Adults (Hard)</span>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fa-solid fa-star"></i>
+                                <span class="text-sm ml-1">4.7 (750 reviews)</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Complex Mandala Coloring Page</h3>
+                        <p class="text-gray-600 text-sm mb-4">Intricate mandala for stress relief—adult-friendly.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="/free-printables/complex-mandala" class="text-primary font-medium hover:underline flex items-center">
+                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <span class="text-xs text-gray-500">8.5x11 in</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4: ABC Educational (50k searches) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
+                    <span class="free-badge">Free</span>
+                    <img 
+                        src="https://coloringpagesprintable.online/images/abc-coloring-worksheet.jpg" 
+                        alt="Free printable ABC coloring worksheet for kids—letter recognition, ages 4-6" 
+                        class="w-full h-48 object-cover"
+                        loading="lazy">
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-medium bg-green-100 text-green-700 px-2 py-1 rounded">Kids (Easy)</span>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fa-solid fa-star"></i>
+                                <span class="text-sm ml-1">4.9 (620 reviews)</span>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">ABC Alphabet Coloring Worksheet</h3>
+                        <p class="text-gray-600 text-sm mb-4">Educational coloring page for learning letters—ages 4-6.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="/free-printables/abc-alphabet" class="text-primary font-medium hover:underline flex items-center">
+                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <span class="text-xs text-gray-500">8.5x11 in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="/free-printables" class="inline-block bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                    View All Free Printables <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Kids Section (Long-Tail: coloring pages for kids) -->
+    <section id="for-kids" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Coloring Pages for Kids</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Our kid-friendly coloring sheets are designed for ages 3-12—easy designs with large lines, educational themes, and US standard 8.5x11 inch sizing. Perfect for classrooms, homeschooling, or rainy days.
+                    </p>
+                    <!-- Difficulty & Educational Labels -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">Age-Appropriate Designs</h4>
+                                <p class="text-gray-600">Easy (3-6), Medium (7-9), and Advanced (10-12) options with age-specific themes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">Educational Benefits</h4>
+                                <p class="text-gray-600">ABCs, numbers, shapes, and animal facts integrated into fun coloring activities.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">Safe & Wholesome</h4>
+                                <p class="text-gray-600">All kids' coloring pages are reviewed to ensure appropriate content for all ages.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/free-printables?audience=kids" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
+                        Browse Kids Printables <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img 
+                        src="https://coloringpagesprintable.online/images/kids-coloring-pages.jpg" 
+                        alt="Free printable coloring pages for kids—ABC worksheets, animal themes, easy designs" 
+                        class="w-full h-auto rounded-xl shadow-xl hover-lift"
+                        loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Adults Section (Long-Tail: adult coloring pages) -->
+    <section id="for-adults" class="py-16 bg-neutral">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img 
+                        src="https://coloringpagesprintable.online/images/adult-coloring-pages.jpg" 
+                        alt="Free printable coloring pages for adults—complex mandalas, stress relief designs" 
+                        class="w-full h-auto rounded-xl shadow-xl hover-lift"
+                        loading="lazy">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Coloring Pages for Adults</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Unwind with our complex, detailed coloring pages for adults. Designed for stress relief, these patterns feature mandalas, landscapes, and abstract art—optimized for 8.5x11 inch printing.
+                    </p>
+                    <!-- Adult-Focused Features -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">Stress Relief Designs</h4>
+                                <p class="text-gray-600">Intricate patterns that promote mindfulness—perfect after a long day.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">High-Resolution PDFs</h4>
+                                <p class="text-gray-600">Crisp details even when printed at 8.5x11 inches or larger.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-900">No Childish Themes</h4>
+                                <p class="text-gray-600">Mandalas, vintage patterns, nature scenes—adult-appropriate designs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/free-printables?audience=adults" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
+                        Browse Adult Printables <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Coloring Page Maker (User Upload Feature) -->
+    <section id="custom-maker" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Make Your Own Custom Coloring Page</h2>
+                <p class="text-lg text-gray-700">Upload any image (photo, drawing, logo) and turn it into a printable coloring page—free, no design skills needed. Perfect for personalized gifts or unique projects.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-neutral rounded-2xl p-6 md:p-8 shadow-lg">
+                <form id="custom-form" class="space-y-6">
+                    <div class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary transition-colors">
+                        <label for="image-upload" class="cursor-pointer">
+                            <i class="fa-solid fa-cloud-upload text-4xl text-gray-400 mb-3"></i>
+                            <p class="text-gray-700 font-medium">Drag & drop your image here or click to upload</p>
+                            <p class="text-gray-500 text-sm mt-1">Supports JPG, PNG, GIF (max 5MB)</p>
+                            <input type="file" id="image-upload" accept="image/*" class="hidden">
+                        </label>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="difficulty">Difficulty Level</label>
+                            <select id="difficulty" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none">
+                                <option value="easy">Easy (Thick lines, simple shapes)</option>
+                                <option value="medium" selected>Medium (Balanced detail)</option>
+                                <option value="hard">Hard (Fine lines, intricate details)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="size">Paper Size</label>
+                            <select id="size" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none">
+                                <option value="us-letter" selected>US Letter (8.5x11 inch)</option>
+                                <option value="a4">A4 (210x297mm)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" id="generate-btn" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all">
+                        <i class="fa-solid fa-magic mr-2"></i> Generate Coloring Page
+                    </button>
+                    <!-- Loading & Result -->
+                    <div id="loading" class="text-center hidden">
+                        <i class="fa-solid fa-spinner fa-spin text-2xl text-primary mb-2"></i>
+                        <p class="text-gray-700">Generating your custom coloring page...</p>
+                    </div>
+                    <div id="result" class="hidden">
+                        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Your Custom Coloring Page is Ready!</h3>
+                            <img id="result-img" src="" alt="Custom coloring page preview" class="max-w-full h-auto rounded-lg mx-auto">
+                        </div>
+                        <a href="#" id="download-custom" class="block w-full bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-center">
+                            <i class="fa-solid fa-download mr-2"></i> Download PDF
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (High-Search Intent) -->
+    <section class="py-16 bg-neutral">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-700">Answers to common questions about our free printable coloring pages</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">Are your coloring pages printable free to download?</h3>
+                    <p class="text-gray-700">
+                        Yes! All coloring pages on our site are 100% free to download and print—no sign-up, registration, or payment required. Simply click the "Download PDF" button on any resource page to save the file to your device.
+                    </p>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">What size are the printable coloring pages?</h3>
+                    <p class="text-gray-700">
+                        Our coloring pages are optimized for <strong>US standard 8.5x11 inch paper</strong>—the most common size for home and office printers in the US and Canada. You can adjust your printer settings to fit A4 paper if needed (no quality loss).
+                    </p>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">Do you have coloring pages for kids and adults?</h3>
+                    <p class="text-gray-700">
+                        Absolutely! We have three main sections: 
+                        <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-700">
+                            <li><strong>Kids (3-12):</strong> Easy designs with large lines, educational themes (ABCs, math), and age-appropriate difficulty levels.</li>
+                            <li><strong>Teens (13-17):</strong> Popular IP themes (Pokemon, Sonic, Minecraft) and medium-difficulty designs.</li>
+                            <li><strong>Adults:</strong> Complex mandalas, nature scenes, and abstract patterns for stress relief—no childish themes.</li>
+                        </ul>
+                    </p>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">Can I upload my own image to make a custom coloring page?</h3>
+                    <p class="text-gray-700">
+                        Yes! Use our "Custom Coloring Page Maker" tool (above) to upload any image (photos of family, pet drawings, logos) and convert it into a printable coloring page. You can choose difficulty levels (easy/medium/hard) and paper size—free to use, no design skills needed.
+                    </p>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">Are the coloring pages good for educational use?</h3>
+                    <p class="text-gray-700">
+                        Yes! Many of our kids' coloring pages are labeled with specific learning skills (e.g., "Skills: Letter Recognition," "Math: Addition")—perfect for classrooms, homeschooling, or at-home learning in the US and Canada. Teachers can download and print as many copies as needed for their students.
+                    </p>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-xl mb-3 text-gray-900">What file format are the coloring pages in?</h3>
+                    <p class="text-gray-700">
+                        All coloring pages are available as <strong>PDF files</strong>—the best format for printing (preserves quality and layout across all devices). You can open PDFs with free software like Adobe Acrobat Reader, Preview (Mac), or Google Drive.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Free Downloads) -->
+    <section class="py-16 bg-gradient-to-r from-primary/10 to-secondary/10 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Start Downloading Free Coloring Pages</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                100% free, no sign-up—find the perfect coloring sheets for your family, classroom, or stress-relief routine. Optimized for US/CA printers (8.5x11 inch).
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/free-printables?audience=kids" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                    <i class="fa-solid fa-child mr-2"></i> Kids Printables
+                </a>
+                <a href="/free-printables?audience=adults" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                    <i class="fa-solid fa-user mr-2"></i> Adult Printables
+                </a>
+                <a href="/free-printables?theme=christmas" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                    <i class="fa-solid fa-snowflake mr-2"></i> Holiday Themes
+                </a>
+                <a href="#custom-maker" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                    <i class="fa-solid fa-magic mr-2"></i> Custom Designs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa-solid fa-palette text-primary text-2xl"></i>
+                        <span class="text-xl font-bold">ColoringPagesPrintable</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Free printable coloring pages for kids, teens, and adults. No sign-up required.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" rel="noopener noreferrer">
+                            <i class="fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" rel="noopener noreferrer">
+                            <i class="fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" rel="noopener noreferrer">
+                            <i class="fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors" rel="noopener noreferrer">
+                            <i class="fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/free-printables?audience=kids" class="text-gray-400 hover:text-primary transition-colors">Kids Coloring Pages</a></li>
+                        <li><a href="/free-printables?audience=teens" class="text-gray-400 hover:text-primary transition-colors">Teen Designs</a></li>
+                        <li><a href="/free-printables?audience=adults" class="text-gray-400 hover:text-primary transition-colors">Adult Coloring Sheets</a></li>
+                        <li><a href="/free-printables?theme=holiday" class="text-gray-400 hover:text-primary transition-colors">Holiday Themes</a></li>
+                        <li><a href="/free-printables?theme=educational" class="text-gray-400 hover:text-primary transition-colors">Educational Printables</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/printing-guide" class="text-gray-400 hover:text-primary transition-colors">Printing Guide</a></li>
+                        <li><a href="/coloring-tips" class="text-gray-400 hover:text-primary transition-colors">Coloring Tips & Ideas</a></li>
+                        <li><a href="/teachers-resources" class="text-gray-400 hover:text-primary transition-colors">Teacher Resources</a></li>
+                        <li><a href="/faq" class="text-gray-400 hover:text-primary transition-colors">FAQ</a></li>
+                        <li><a href="/blog" class="text-gray-400 hover:text-primary transition-colors">Coloring Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/terms-of-service" class="text-gray-400 hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="/privacy-policy" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="/copyright" class="text-gray-400 hover:text-primary transition-colors">Copyright Info</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 ColoringPagesPrintable.online. All rights reserved. For personal/educational use only. Compliant with US CCPA and Canada PIPEDA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS: Mobile Menu + Search Suggestions + Custom Maker -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Search Suggestions (Keyword联想)
+        const searchInput = document.getElementById('search-input');
+        const searchSuggestions = document.getElementById('search-suggestions');
+        const suggestionList = document.getElementById('suggestion-list');
+        // 高频关键词列表（匹配用户搜索词）
+        const popularKeywords = [
+            "coloring pages printable", "free coloring pages", "unicorn coloring pages", 
+            "pokemon coloring pages", "adult coloring pages", "christmas coloring pages printable",
+            "printable coloring pages for 5 year olds", "stress relief coloring sheets",
+            "educational coloring pages", "mandala coloring pages for adults"
+        ];
+
+        function searchSuggestions() {
+            const input = searchInput.value.toLowerCase();
+            suggestionList.innerHTML = '';
+            
+            if (input.length < 2) {
+                searchSuggestions.classList.add('hidden');
+                return;
+            }
+            
+            const matches = popularKeywords.filter(keyword => 
+                keyword.toLowerCase().includes(input)
+            );
+            
+            if (matches.length > 0) {
+                matches.forEach(keyword => {
+                    const li = document.createElement('li');
+                    li.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer';
+                    li.textContent = keyword;
+                    li.addEventListener('click', () => {
+                        searchInput.value = keyword;
+                        searchSuggestions.classList.add('hidden');
+                    });
+                    suggestionList.appendChild(li);
+                });
+                searchSuggestions.classList.remove('hidden');
+            } else {
+                searchSuggestions.classList.add('hidden');
+            }
+        }
+
+        // 点击页面其他地方关闭搜索建议
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                searchSuggestions.classList.add('hidden');
+            }
+        });
+
+        // 自定义 coloring page 生成器模拟
+        const generateBtn = document.getElementById('generate-btn');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+        
+        generateBtn.addEventListener('click', () => {
+            loading.classList.remove('hidden');
+            generateBtn.disabled = true;
+            
+            // 模拟生成过程
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                result.classList.remove('hidden');
+                document.getElementById('result-img').src = 'https://picsum.photos/seed/custom/600/400';
+                generateBtn.disabled = false;
+            }, 2000);
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
