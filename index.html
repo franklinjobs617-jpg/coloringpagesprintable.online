@@ -32,6 +32,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "tfo8ah57w4");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QGJ254569"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-5QGJ254569');
+    </script>
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -119,65 +135,113 @@
     <!-- Header (Sticky + Responsive) -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo (SEO + Branding) -->
-                <a href="https://coloringpagesprintable.online/" class="flex items-center space-x-2">
-                    <i class="fa-solid fa-palette text-primary text-2xl"></i>
-                    <span class="text-xl font-bold text-gray-900">ColoringPagesPrintable</span>
-                </a>
-                <!-- Desktop Navigation (Keyword-Rich) -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#popular" class="font-medium text-gray-700 hover:text-primary transition-colors">Popular Printables</a>
-                    <a href="#for-kids" class="font-medium text-gray-700 hover:text-primary transition-colors">For Kids</a>
-                    <a href="#for-adults" class="font-medium text-gray-700 hover:text-primary transition-colors">For Adults</a>
-                    <a href="#custom-maker" class="font-medium text-gray-700 hover:text-primary transition-colors">Custom Coloring</a>
-                    <a href="/free-printables" class="font-medium text-primary font-semibold">Free Downloads</a>
-                    <!-- CTA Button -->
-                    <a href="/free-printables" class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg transition-colors">
-                        <i class="fa-solid fa-download mr-2"></i> Free PDFs
-                    </a>
-                </nav>
-                <!-- Mobile Menu Button + Search -->
-                <div class="flex items-center space-x-4">
-                    <!-- Search Box (Keyword联想) -->
-                    <div class="relative hidden sm:block">
-                        <input type="text" id="search-input" placeholder="Search coloring pages..." 
-                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all"
-                               onkeyup="searchSuggestions()">
-                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                        <!-- Search Suggestions -->
-                        <div id="search-suggestions" class="absolute left-0 right-0 top-full mt-1 bg-white rounded-lg shadow-lg hidden z-10">
-                            <ul id="suggestion-list" class="py-2">
-                                <!-- 搜索建议将通过JS动态生成 -->
-                            </ul>
-                        </div>
-                    </div>
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
+          <div class="flex justify-between items-center py-4">
+            <a
+              href="https://coloringpagesprintable.online/"
+              class="flex items-center space-x-2"
+            >
+              <i class="fa-solid fa-palette text-primary text-2xl"></i>
+              <span class="text-xl font-bold text-gray-900"
+                >ColoringPagesPrintable</span
+              >
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+              <a
+                href="/#popular"
+                class="font-medium text-gray-700 hover:text-primary transition-colors"
+                >Popular Printables</a
+              >
+              <a
+                href="/#for-kids"
+                class="font-medium text-gray-700 hover:text-primary transition-colors"
+                >For Kids</a
+              >
+              <a
+                href="/#for-adults"
+                class="font-medium text-gray-700 hover:text-primary transition-colors"
+                >For Adults</a
+              >
+              <a
+                href="#"
+                class="font-medium text-gray-700 hover:text-primary transition-colors"
+                >Custom Coloring</a
+              >
+              <a
+                href="#"
+                class="font-medium text-primary font-semibold"
+                >Free Downloads</a
+              >
+              <a
+                href="#"
+                class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg transition-colors"
+              >
+                <i class="fa-solid fa-download mr-2"></i> Free PDFs
+              </a>
+            </nav>
+            <div class="flex items-center space-x-4">
+              <div class="relative hidden sm:block">
+                <input
+                  type="text"
+                  placeholder="Search coloring pages..."
+                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none transition-all"
+                />
+                <i
+                  class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                ></i>
+              </div>
+              <button
+                id="mobile-menu-btn"
+                class="md:hidden text-gray-700 focus:outline-none"
+              >
+                <i class="fa-solid fa-bars text-xl"></i>
+              </button>
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <nav class="space-y-3">
-                    <a href="#popular" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">Popular Printables</a>
-                    <a href="#for-kids" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">For Kids</a>
-                    <a href="#for-adults" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">For Adults</a>
-                    <a href="#custom-maker" class="block font-medium text-gray-700 hover:text-primary transition-colors py-2">Custom Coloring</a>
-                    <a href="/free-printables" class="block font-medium text-primary font-semibold py-2">Free Downloads</a>
-                    <!-- Mobile Search -->
-                    <div class="relative mt-3">
-                        <input type="text" placeholder="Search coloring pages..." 
-                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none">
-                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    </div>
-                    <a href="/free-printables" class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg text-center transition-colors mt-2">
-                        <i class="fa-solid fa-download mr-2"></i> Free PDFs
-                    </a>
-                </nav>
-            </div>
+          </div>
+          <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <nav class="flex flex-col space-y-3">
+              <a
+                href="/#popular"
+                class="font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                >Popular Printables</a
+              >
+              <a
+                href="/#for-kids"
+                class="font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                >For Kids</a
+              >
+              <a
+                href="/#for-adults"
+                class="font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                >For Adults</a
+              >
+              <a
+                href="/#custom-maker"
+                class="font-medium text-gray-700 hover:text-primary transition-colors py-2"
+                >Custom Coloring</a
+              >
+              <a href="/free-printables.html" class="font-medium text-primary py-2"
+                >Free Downloads</a
+              >
+              <div class="relative mt-2">
+                <input
+                  type="text"
+                  placeholder="Search coloring pages..."
+                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none"
+                />
+                <i
+                  class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                ></i>
+              </div>
+              <a
+                href="/free-printables.html"
+                class="bg-secondary hover:bg-secondary/90 text-white font-semibold px-5 py-2 rounded-lg text-center transition-colors mt-2"
+              >
+                <i class="fa-solid fa-download mr-2"></i> Free PDFs
+              </a>
+            </nav>
+          </div>
         </div>
-    </header>
+      </header>
 
     <!-- Hero Section (Core Keyword Focus) -->
     <section class="bg-gradient-to-r from-primary/10 to-secondary/10 py-12 md:py-20">
@@ -191,10 +255,10 @@
                         Download 100% free coloring sheets for kids (3-12), teens, and adults—no sign-up. Popular themes: unicorn, Pokemon, Christmas, and educational designs optimized for US 8.5x11 inch printers.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="/free-printables?audience=kids" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all">
+                        <a href="/free-printables.html" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all">
                             <i class="fa-solid fa-child mr-2"></i> Kids Coloring Pages
                         </a>
-                        <a href="/free-printables?audience=adults" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                        <a href="/free-printables.html" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
                             <i class="fa-solid fa-user mr-2"></i> Adult Designs
                         </a>
                     </div>
@@ -213,8 +277,8 @@
                 </div>
                 <div class="relative rounded-xl overflow-hidden shadow-xl">
                     <img 
-                        src="https://coloringpagesprintable.online/images/featured-coloring-pages.jpg" 
-                        alt="Free printable coloring pages collection—unicorn, Pokemon, and Christmas themes for kids and adults" 
+                        src="./image/1-Collage of IP-Inspired Coloring Page Thumbnails.png" 
+                        alt="Free printable coloring pages collection - unicorn-like fantasy, Q版 cartoon, Christmas, and mandala styles for kids, teens, adults (8.5x11 inch) | coloringpagesprintable.online" 
                         class="w-full h-auto object-cover hover-lift"
                         loading="lazy">
                     <span class="free-badge">100% Free</span>
@@ -260,8 +324,9 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
                     <span class="free-badge">Free</span>
                     <img 
-                        src="https://coloringpagesprintable.online/images/unicorn-coloring-page.jpg" 
-                        alt="Free printable unicorn coloring page for kids—easy design, 8.5x11 inch" 
+                        id="img-popular-unicorn"
+                        src="./image/2-Simple Magical Creature Coloring Page for Kids (3-7.png" 
+                        alt="Free printable unicorn-like coloring page for kids 3-7 - thick outlines, rainbow mane, stars | coloringpagesprintable.online" 
                         class="w-full h-48 object-cover"
                         loading="lazy">
                     <div class="p-5">
@@ -275,8 +340,8 @@
                         <h3 class="font-bold text-lg mb-2">Unicorn Magic Coloring Page</h3>
                         <p class="text-gray-600 text-sm mb-4">Easy unicorn design with sparkles—perfect for ages 3-7.</p>
                         <div class="flex justify-between items-center">
-                            <a href="/free-printables/unicorn-magic" class="text-primary font-medium hover:underline flex items-center">
-                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            <a href="#" class="download-pdf-btn text-primary font-medium hover:underline flex items-center" data-image-id="img-popular-unicorn">
+                                Download PDF <i class="fa-solid fa-download ml-2 text-sm"></i>
                             </a>
                             <span class="text-xs text-gray-500">8.5x11 in</span>
                         </div>
@@ -286,8 +351,9 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
                     <span class="free-badge">Free</span>
                     <img 
-                        src="https://coloringpagesprintable.online/images/pokemon-coloring-page.jpg" 
-                        alt="Free printable Pokemon coloring page for teens—Pikachu design, 8.5x11 inch" 
+                        id="img-popular-pikachu"
+                        src="./image/3-Q 版 Cartoon Pet-Inspired Coloring Page for Kids (8-12).png" 
+                        alt="Free printable Q版 cartoon coloring page for kids 8-12 - round face, large ears, cloud accents | coloringpagesprintable.online" 
                         class="w-full h-48 object-cover"
                         loading="lazy">
                     <div class="p-5">
@@ -301,8 +367,8 @@
                         <h3 class="font-bold text-lg mb-2">Pikachu Pokemon Coloring Page</h3>
                         <p class="text-gray-600 text-sm mb-4">Official Pikachu design for Pokemon fans ages 10+.</p>
                         <div class="flex justify-between items-center">
-                            <a href="/free-printables/pikachu-pokemon" class="text-primary font-medium hover:underline flex items-center">
-                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            <a href="#" class="download-pdf-btn text-primary font-medium hover:underline flex items-center" data-image-id="img-popular-pikachu">
+                                Download PDF <i class="fa-solid fa-download ml-2 text-sm"></i>
                             </a>
                             <span class="text-xs text-gray-500">8.5x11 in</span>
                         </div>
@@ -312,8 +378,9 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
                     <span class="free-badge">Free</span>
                     <img 
-                        src="https://coloringpagesprintable.online/images/mandala-coloring-page.jpg" 
-                        alt="Free printable mandala coloring page for adults—stress relief design" 
+                        id="img-popular-mandala"
+                        src="./image/5-Intricate Adult Coloring Page Symmetrical Mandala with Floral and Geometric Elements.png" 
+                        alt="Free printable mandala-like coloring page for adults - intricate floral, geometric patterns for stress relief | coloringpagesprintable.online" 
                         class="w-full h-48 object-cover"
                         loading="lazy">
                     <div class="p-5">
@@ -327,8 +394,8 @@
                         <h3 class="font-bold text-lg mb-2">Complex Mandala Coloring Page</h3>
                         <p class="text-gray-600 text-sm mb-4">Intricate mandala for stress relief—adult-friendly.</p>
                         <div class="flex justify-between items-center">
-                            <a href="/free-printables/complex-mandala" class="text-primary font-medium hover:underline flex items-center">
-                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            <a href="#" class="download-pdf-btn text-primary font-medium hover:underline flex items-center" data-image-id="img-popular-mandala">
+                                Download PDF <i class="fa-solid fa-download ml-2 text-sm"></i>
                             </a>
                             <span class="text-xs text-gray-500">8.5x11 in</span>
                         </div>
@@ -338,8 +405,9 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover-lift relative">
                     <span class="free-badge">Free</span>
                     <img 
-                        src="https://coloringpagesprintable.online/images/abc-coloring-worksheet.jpg" 
-                        alt="Free printable ABC coloring worksheet for kids—letter recognition, ages 4-6" 
+                        id="img-popular-abc"
+                        src="./image/15-Children's Educational Coloring Page Letters Numbers and Animals.png" 
+                        alt="Free printable educational coloring page for kids 5-8 - ABC letters, numbers 1-10 with animal counts, thick lines for easy coloring | coloringpagesprintable.online" 
                         class="w-full h-48 object-cover"
                         loading="lazy">
                     <div class="p-5">
@@ -353,8 +421,8 @@
                         <h3 class="font-bold text-lg mb-2">ABC Alphabet Coloring Worksheet</h3>
                         <p class="text-gray-600 text-sm mb-4">Educational coloring page for learning letters—ages 4-6.</p>
                         <div class="flex justify-between items-center">
-                            <a href="/free-printables/abc-alphabet" class="text-primary font-medium hover:underline flex items-center">
-                                Download PDF <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            <a href="#" class="download-pdf-btn text-primary font-medium hover:underline flex items-center" data-image-id="img-popular-abc">
+                                Download PDF <i class="fa-solid fa-download ml-2 text-sm"></i>
                             </a>
                             <span class="text-xs text-gray-500">8.5x11 in</span>
                         </div>
@@ -363,7 +431,7 @@
             </div>
 
             <div class="text-center mt-10">
-                <a href="/free-printables" class="inline-block bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                <a href="/free-printables.html" class="inline-block bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
                     View All Free Printables <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -403,14 +471,14 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/free-printables?audience=kids" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
+                    <a href="/free-printables.html" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
                         Browse Kids Printables <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
                 <div class="order-1 md:order-2">
                     <img 
-                        src="https://coloringpagesprintable.online/images/kids-coloring-pages.jpg" 
-                        alt="Free printable coloring pages for kids—ABC worksheets, animal themes, easy designs" 
+                        src="./image/16-Pop Culture Coloring Page for Teens Music & Geometric Patterns.png" 
+                        alt="Free printable pop culture coloring page for teens 13-17 - music themes, geometric patterns, trendy design | coloringpagesprintable.online" 
                         class="w-full h-auto rounded-xl shadow-xl hover-lift"
                         loading="lazy">
                 </div>
@@ -424,8 +492,8 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <img 
-                        src="https://coloringpagesprintable.online/images/adult-coloring-pages.jpg" 
-                        alt="Free printable coloring pages for adults—complex mandalas, stress relief designs" 
+                        src="./image/17-Family-Friendly Interactive Coloring Page Park Picnic Scene.png" 
+                        alt="Free printable family interactive coloring page - puzzle-style picnic scene, multi-age friendly design for shared activity | coloringpagesprintable.online" 
                         class="w-full h-auto rounded-xl shadow-xl hover-lift"
                         loading="lazy">
                 </div>
@@ -458,7 +526,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="/free-printables?audience=adults" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
+                    <a href="/free-printables.html" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-block">
                         Browse Adult Printables <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -592,13 +660,13 @@
                 100% free, no sign-up—find the perfect coloring sheets for your family, classroom, or stress-relief routine. Optimized for US/CA printers (8.5x11 inch).
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="/free-printables?audience=kids" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                <a href="/free-printables.html" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
                     <i class="fa-solid fa-child mr-2"></i> Kids Printables
                 </a>
-                <a href="/free-printables?audience=adults" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                <a href="/free-printables.html" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
                     <i class="fa-solid fa-user mr-2"></i> Adult Printables
                 </a>
-                <a href="/free-printables?theme=christmas" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
+                <a href="/free-printables.html" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
                     <i class="fa-solid fa-snowflake mr-2"></i> Holiday Themes
                 </a>
                 <a href="#custom-maker" class="bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all border border-primary/20">
@@ -618,7 +686,7 @@
                         <span class="text-xl font-bold">ColoringPagesPrintable</span>
                     </div>
                     <p class="text-gray-400 mb-4">
-                        Free printable coloring pages for kids, teens, and adults. No sign-up required.
+                        Free and custom printable coloring pages for all ages. No sign-up required.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-primary transition-colors" rel="noopener noreferrer">
@@ -637,34 +705,34 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="/free-printables?audience=kids" class="text-gray-400 hover:text-primary transition-colors">Kids Coloring Pages</a></li>
-                        <li><a href="/free-printables?audience=teens" class="text-gray-400 hover:text-primary transition-colors">Teen Designs</a></li>
-                        <li><a href="/free-printables?audience=adults" class="text-gray-400 hover:text-primary transition-colors">Adult Coloring Sheets</a></li>
-                        <li><a href="/free-printables?theme=holiday" class="text-gray-400 hover:text-primary transition-colors">Holiday Themes</a></li>
-                        <li><a href="/free-printables?theme=educational" class="text-gray-400 hover:text-primary transition-colors">Educational Printables</a></li>
+                        <li><a href="/" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Kids Coloring Pages</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Adult Coloring Sheets</a></li>
+                        <li><a href="/#custom-maker" class="text-gray-400 hover:text-primary transition-colors">Custom Coloring Maker</a></li>
+                        <li><a href="" class="text-gray-400 hover:text-primary transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <h3 class="text-lg font-semibold mb-4">Popular Themes</h3>
                     <ul class="space-y-2">
-                        <li><a href="/printing-guide" class="text-gray-400 hover:text-primary transition-colors">Printing Guide</a></li>
-                        <li><a href="/coloring-tips" class="text-gray-400 hover:text-primary transition-colors">Coloring Tips & Ideas</a></li>
-                        <li><a href="/teachers-resources" class="text-gray-400 hover:text-primary transition-colors">Teacher Resources</a></li>
-                        <li><a href="/faq" class="text-gray-400 hover:text-primary transition-colors">FAQ</a></li>
-                        <li><a href="/blog" class="text-gray-400 hover:text-primary transition-colors">Coloring Blog</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Unicorn Coloring Pages</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Pokemon Coloring Sheets</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Mandala Designs</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Christmas Coloring Pages</a></li>
+                        <li><a href="/free-printables.html" class="text-gray-400 hover:text-primary transition-colors">Educational Printables</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
-                        <li><a href="/terms-of-service" class="text-gray-400 hover:text-primary transition-colors">Terms of Service</a></li>
-                        <li><a href="/privacy-policy" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
-                        <li><a href="/copyright" class="text-gray-400 hover:text-primary transition-colors">Copyright Info</a></li>
-                        <li><a href="/contact" class="text-gray-400 hover:text-primary transition-colors">Contact Us</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Copyright Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -674,11 +742,14 @@
         </div>
     </footer>
 
-    <!-- JS: Mobile Menu + Search Suggestions + Custom Maker -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script>
-        // Mobile Menu Toggle
+        // --- YOUR ORIGINAL JAVASCRIPT ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             const icon = mobileMenuBtn.querySelector('i');
@@ -686,74 +757,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Search Suggestions (Keyword联想)
-        const searchInput = document.getElementById('search-input');
-        const searchSuggestions = document.getElementById('search-suggestions');
-        const suggestionList = document.getElementById('suggestion-list');
-        // 高频关键词列表（匹配用户搜索词）
-        const popularKeywords = [
-            "coloring pages printable", "free coloring pages", "unicorn coloring pages", 
-            "pokemon coloring pages", "adult coloring pages", "christmas coloring pages printable",
-            "printable coloring pages for 5 year olds", "stress relief coloring sheets",
-            "educational coloring pages", "mandala coloring pages for adults"
-        ];
-
-        function searchSuggestions() {
-            const input = searchInput.value.toLowerCase();
-            suggestionList.innerHTML = '';
-            
-            if (input.length < 2) {
-                searchSuggestions.classList.add('hidden');
-                return;
-            }
-            
-            const matches = popularKeywords.filter(keyword => 
-                keyword.toLowerCase().includes(input)
-            );
-            
-            if (matches.length > 0) {
-                matches.forEach(keyword => {
-                    const li = document.createElement('li');
-                    li.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer';
-                    li.textContent = keyword;
-                    li.addEventListener('click', () => {
-                        searchInput.value = keyword;
-                        searchSuggestions.classList.add('hidden');
-                    });
-                    suggestionList.appendChild(li);
-                });
-                searchSuggestions.classList.remove('hidden');
-            } else {
-                searchSuggestions.classList.add('hidden');
-            }
-        }
-
-        // 点击页面其他地方关闭搜索建议
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
-                searchSuggestions.classList.add('hidden');
-            }
-        });
-
-        // 自定义 coloring page 生成器模拟
-        const generateBtn = document.getElementById('generate-btn');
-        const loading = document.getElementById('loading');
-        const result = document.getElementById('result');
-        
-        generateBtn.addEventListener('click', () => {
-            loading.classList.remove('hidden');
-            generateBtn.disabled = true;
-            
-            // 模拟生成过程
-            setTimeout(() => {
-                loading.classList.add('hidden');
-                result.classList.remove('hidden');
-                document.getElementById('result-img').src = 'https://picsum.photos/seed/custom/600/400';
-                generateBtn.disabled = false;
-            }, 2000);
-        });
-
-        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -763,7 +766,6 @@
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    // 关闭移动菜单（如果打开）
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                         const icon = mobileMenuBtn.querySelector('i');
@@ -771,6 +773,80 @@
                         icon.classList.remove('fa-times');
                     }
                 }
+            });
+        });
+        
+        // --- NEW AND CORRECTED JAVASCRIPT FOR PDF DOWNLOAD ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadButtons = document.querySelectorAll('.download-pdf-btn');
+
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    const imageId = this.dataset.imageId;
+                    const imageElement = document.getElementById(imageId);
+
+                    if (!imageElement) {
+                        console.error('Image element not found for ID:', imageId);
+                        alert('Sorry, there was an error preparing the download.');
+                        return;
+                    }
+                    
+                    const cardBody = this.closest('.p-5'); 
+                    if (!cardBody) {
+                        console.error('Could not find parent card body with class .p-5');
+                        alert('Sorry, an error occurred (code: card-body-not-found).');
+                        return;
+                    }
+
+                    const titleElement = cardBody.querySelector('h3');
+                    if(!titleElement) {
+                        console.error('Could not find h3 title element inside the card body.');
+                        alert('Sorry, an error occurred (code: title-not-found).');
+                        return;
+                    }
+
+                    const title = titleElement.textContent.trim();
+                    const filename = `${title.replace(/\s+/g, '-')}-Coloring-Page.pdf`;
+
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF('p', 'mm', 'a4');
+                    
+                    const img = new Image();
+                    img.crossOrigin = "Anonymous";
+                    img.src = imageElement.src;
+
+                    img.onload = () => {
+                        const pageWidth = doc.internal.pageSize.getWidth();
+                        const pageHeight = doc.internal.pageSize.getHeight();
+                        const margin = 10;
+                        const usableWidth = pageWidth - (margin * 2);
+                        const usableHeight = pageHeight - (margin * 2);
+                        const imageRatio = img.width / img.height;
+                        const pageRatio = usableWidth / usableHeight;
+                        let imgWidth, imgHeight;
+
+                        if (imageRatio > pageRatio) {
+                            imgWidth = usableWidth;
+                            imgHeight = imgWidth / imageRatio;
+                        } else {
+                            imgHeight = usableHeight;
+                            imgWidth = imgHeight * imageRatio;
+                        }
+                        
+                        const x = (pageWidth - imgWidth) / 2;
+                        const y = (pageHeight - imgHeight) / 2;
+
+                        doc.addImage(img, 'PNG', x, y, imgWidth, imgHeight);
+                        doc.save(filename);
+                    };
+                    
+                    img.onerror = () => {
+                         console.error('Could not load image for PDF generation. This is likely a browser security issue when running from a local file (file://). Please use a local server like VS Code Live Server.');
+                         alert('Sorry, the image could not be loaded. Please ensure you are running this page from a web server (e.g., using "Live Server" in VS Code) and not as a local file.');
+                    }
+                });
             });
         });
     </script>
