@@ -41,6 +41,8 @@
         })(window, document, "clarity", "script", "tfo8ah57w4");
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QGJ254569"></script>
+    <script async src="https://docs.opencv.org/4.7.0/opencv.js"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -535,29 +537,36 @@
     </section>
 
     <!-- Custom Coloring Page Maker (User Upload Feature) -->
-    <section id="custom-maker" class="py-16 bg-white">
+
+    <section id="custom-maker" class="py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Make Your Own Custom Coloring Page</h2>
-                <p class="text-lg text-gray-700">Upload any image (photo, drawing, logo) and turn it into a printable coloring page—free, no design skills needed. Perfect for personalized gifts or unique projects.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Create Your Own Number Coloring Page</h2>
+                <p class="text-lg text-gray-700">Upload any image (photo, drawing, logo) and turn it into a printable number coloring page—free, with no design skills needed.</p>
             </div>
 
-            <div class="max-w-2xl mx-auto bg-neutral rounded-2xl p-6 md:p-8 shadow-lg">
-                <form id="custom-form" class="space-y-6">
-                    <div class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary transition-colors">
+            <div class="max-w-5xl mx-auto bg-white rounded-2xl p-6 md:p-8 shadow-2xl">
+                <!-- Step 1: Upload & Settings -->
+                <div id="setup-step">
+                    <div id="upload-area" class="text-center p-6 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary transition-colors">
                         <label for="image-upload" class="cursor-pointer">
                             <i class="fa-solid fa-cloud-upload text-4xl text-gray-400 mb-3"></i>
                             <p class="text-gray-700 font-medium">Drag & drop your image here or click to upload</p>
-                            <p class="text-gray-500 text-sm mt-1">Supports JPG, PNG, GIF (max 5MB)</p>
+                            <p class="text-gray-500 text-sm mt-1">Supports JPG, PNG (Max 5MB)</p>
                             <input type="file" id="image-upload" accept="image/*" class="hidden">
                         </label>
                     </div>
+                    
+                    <div id="image-preview-container" class="mt-6 text-center hidden">
+                        <p class="font-medium text-gray-800 mb-2">Image Preview:</p>
+                        <img id="image-preview" src="" alt="Image preview" class="max-w-xs h-auto rounded-lg mx-auto shadow-md">
+                    </div>
 
-                    <div class="grid md:grid-cols-2 gap-4">
+                    <div class="grid md:grid-cols-2 gap-4 mt-6">
                         <div>
                             <label class="block text-gray-700 font-medium mb-2" for="difficulty">Difficulty Level</label>
                             <select id="difficulty" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-transparent outline-none">
-                                <option value="easy">Easy (Thick lines, simple shapes)</option>
+                                <option value="easy">Easy (Thick lines, large areas)</option>
                                 <option value="medium" selected>Medium (Balanced detail)</option>
                                 <option value="hard">Hard (Fine lines, intricate details)</option>
                             </select>
@@ -571,27 +580,52 @@
                         </div>
                     </div>
 
-                    <button type="button" id="generate-btn" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all">
-                        <i class="fa-solid fa-magic mr-2"></i> Generate Coloring Page
+                    <button type="button" id="generate-btn" class="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all mt-6">
+                        <i class="fa-solid fa-magic mr-2"></i> Generate Number Coloring Page
                     </button>
-                    <!-- Loading & Result -->
-                    <div id="loading" class="text-center hidden">
-                        <i class="fa-solid fa-spinner fa-spin text-2xl text-primary mb-2"></i>
-                        <p class="text-gray-700">Generating your custom coloring page...</p>
-                    </div>
-                    <div id="result" class="hidden">
-                        <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
-                            <h3 class="font-bold text-lg text-gray-900 mb-2">Your Custom Coloring Page is Ready!</h3>
-                            <img id="result-img" src="" alt="Custom coloring page preview" class="max-w-full h-auto rounded-lg mx-auto">
+                </div>
+                
+                <!-- Step 2: Loading -->
+                <div id="loading" class="text-center hidden py-8">
+                    <i class="fa-solid fa-spinner fa-spin text-4xl text-primary mb-4"></i>
+                    <p id="status" class="text-gray-700 font-medium text-lg">Generating your coloring page...</p>
+                </div>
+                
+                <!-- Step 3: Results -->
+                <div id="result" class="hidden">
+                    <h3 class="font-bold text-xl text-gray-900 mb-4 text-center">Your Coloring Page is Ready!</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gray-50 p-3 rounded-lg shadow-inner">
+                            <h4 class="font-bold text-center text-gray-700 mb-2">Original Reference</h4>
+                            <canvas id="result-original" class="w-full h-auto rounded-md border"></canvas>
                         </div>
-                        <a href="#" id="download-custom" class="block w-full bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-center">
+                         <div class="bg-gray-50 p-3 rounded-lg shadow-inner">
+                            <h4 class="font-bold text-center text-gray-700 mb-2">Number Coloring Page</h4>
+                            <canvas id="canvasOutput" class="w-full h-auto rounded-md border"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg text-gray-800 mb-3">Color Palette</h4>
+                        <div id="palette" class="flex flex-wrap gap-3"></div>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <button type="button" id="start-over-btn" class="w-full bg-accent hover:bg-accent/90  font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-center">
+                            <i class="fa-solid fa-arrow-rotate-left mr-2"></i> Start Over
+                        </button>
+                        <a href="#" id="download-custom" class="block w-full bg-primary hover:bg-primary/90  font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all text-center">
                             <i class="fa-solid fa-download mr-2"></i> Download PDF
                         </a>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
+
+    <canvas id="canvasInput" class="hidden"></canvas>
+    
 
     <!-- FAQ Section (High-Search Intent) -->
     <section class="py-16 bg-neutral">
@@ -849,6 +883,305 @@
                 });
             });
         });
+
+
+        const imageUploadEl = document.getElementById('image-upload');
+    const uploadArea = document.getElementById('upload-area');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    const imagePreview = document.getElementById('image-preview');
+    const difficultyEl = document.getElementById('difficulty');
+    const sizeEl = document.getElementById('size');
+    const generateBtn = document.getElementById('generate-btn');
+    const downloadLink = document.getElementById('download-custom');
+    const startOverBtn = document.getElementById('start-over-btn');
+    const setupStepEl = document.getElementById('setup-step');
+    const loadingEl = document.getElementById('loading');
+    const resultEl = document.getElementById('result');
+    const statusEl = document.getElementById('status');
+    const paletteEl = document.getElementById('palette');
+    const canvasInput = document.getElementById('canvasInput');
+    const canvasOutput = document.getElementById('canvasOutput');
+    const resultOriginalCanvas = document.getElementById('result-original');
+
+    // === Core Logic Variables ===
+    let loadedImage = null;
+    let colorGroups = [];
+
+    // === Event Listeners ===
+    imageUploadEl.addEventListener('change', handleImageUpload);
+    generateBtn.addEventListener('click', handleGenerateClick);
+    downloadLink.addEventListener('click', handleDownloadPdf);
+    startOverBtn.addEventListener('click', resetToInitialState);
+    
+    uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); e.stopPropagation(); uploadArea.classList.add('border-primary'); });
+    uploadArea.addEventListener('dragleave', (e) => { e.preventDefault(); e.stopPropagation(); uploadArea.classList.remove('border-primary'); });
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        uploadArea.classList.remove('border-primary');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            imageUploadEl.files = files;
+            handleImageUpload({ target: imageUploadEl });
+        }
+    });
+
+    // === Functional Functions ===
+    function resetToInitialState() {
+        // Hide result and loading, show setup
+        resultEl.classList.add('hidden');
+        loadingEl.classList.add('hidden');
+        setupStepEl.classList.remove('hidden');
+
+        // Reset file input and preview
+        imageUploadEl.value = null;
+        imagePreview.src = '';
+        imagePreviewContainer.classList.add('hidden');
+        uploadArea.querySelector('p.font-medium').textContent = 'Drag & drop your image here or click to upload';
+
+        // Clear canvases and palette
+        const outCtx = canvasOutput.getContext('2d');
+        outCtx.clearRect(0, 0, canvasOutput.width, canvasOutput.height);
+        const origCtx = resultOriginalCanvas.getContext('2d');
+        origCtx.clearRect(0, 0, resultOriginalCanvas.width, resultOriginalCanvas.height);
+        paletteEl.innerHTML = '';
+
+        // Reset state variables
+        loadedImage = null;
+        colorGroups = [];
+    }
+
+    function handleImageUpload(e) {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        const img = new Image();
+        img.onload = () => {
+            loadedImage = img;
+            imagePreview.src = url;
+            imagePreviewContainer.classList.remove('hidden');
+            uploadArea.querySelector('p.font-medium').textContent = `Selected: ${file.name}`;
+        };
+        img.src = url;
+    }
+    
+    async function handleDownloadPdf(e) {
+        e.preventDefault();
+        setStatus('Generating PDF...');
+        const { jsPDF } = window.jspdf;
+        const paperSize = sizeEl.value;
+        const orientation = canvasOutput.width > canvasOutput.height ? 'landscape' : 'portrait';
+        const doc = new jsPDF({ orientation, unit: 'px', format: paperSize === 'a4' ? 'a4' : 'letter' });
+        
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const margin = 40;
+
+        doc.setFontSize(22);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Your Custom Coloring Page', pageWidth / 2, margin, { align: 'center' });
+
+        const mainImgRatio = Math.min((pageWidth / 2 - margin * 1.5) / canvasOutput.width, (pageHeight - margin * 2) / canvasOutput.height);
+        const mainImgWidth = canvasOutput.width * mainImgRatio;
+        const mainImgHeight = canvasOutput.height * mainImgRatio;
+        const mainImgX = pageWidth / 2 + margin / 2;
+        const mainImgY = margin + 30;
+        doc.addImage(canvasOutput.toDataURL('image/png'), 'PNG', mainImgX, mainImgY, mainImgWidth, mainImgHeight);
+        
+        const refImgWidth = mainImgWidth * 0.5;
+        const refImgHeight = mainImgHeight * 0.5;
+        const refImgX = margin;
+        const refImgY = mainImgY;
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Original Image', refImgX, refImgY - 5);
+        doc.addImage(canvasInput.toDataURL('image/png'), 'PNG', refImgX, refImgY, refImgWidth, refImgHeight);
+
+        const paletteYStart = refImgY + refImgHeight + 40;
+        doc.text('Color Key', refImgX, paletteYStart - 10);
+        let currentY = paletteYStart;
+        const swatchSize = 20;
+        const itemHeight = 25;
+        
+        for(const [index, group] of colorGroups.entries()) {
+            if (currentY + itemHeight > pageHeight - margin) { break; }
+            const [b,g,r] = group.avgColor;
+            doc.setFillColor(r, g, b);
+            doc.rect(refImgX, currentY, swatchSize, swatchSize, 'F');
+            doc.setFont('courier', 'normal');
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            const hex = '#' + ((1<<24) | (r<<16) | (g<<8) | b).toString(16).slice(1).toUpperCase();
+            doc.text(`${index + 1}: ${hex}`, refImgX + swatchSize + 10, currentY + swatchSize / 2, { baseline: 'middle' });
+            currentY += itemHeight;
+        }
+
+        doc.save('coloring-page.pdf');
+        setStatus('Done!');
+    }
+
+    function handleGenerateClick() {
+        if (!loadedImage) { alert('Please upload an image first!'); return; }
+        setupStepEl.classList.add('hidden');
+        resultEl.classList.add('hidden');
+        loadingEl.classList.remove('hidden');
+        waitForOpencv(() => {
+            processImage().catch(err => {
+                console.error(err);
+                setStatus('Generation failed. Please check the console.');
+                loadingEl.classList.add('hidden');
+                setupStepEl.classList.remove('hidden');
+            });
+        });
+    }
+
+    function setStatus(text) {
+        statusEl.textContent = text;
+    }
+
+    function waitForOpencv(callback) {
+        if (typeof cv !== 'undefined' && cv.Mat) return callback();
+        setStatus('Loading OpenCV.js...');
+        const interval = setInterval(() => {
+            if (typeof cv !== 'undefined' && cv.Mat) { clearInterval(interval); setStatus('OpenCV is ready'); callback(); }
+        }, 200);
+    }
+
+    function colorDistance(c1, c2) {
+        return Math.sqrt(Math.pow(c1[0] - c2[0], 2) + Math.pow(c1[1] - c2[1], 2) + Math.pow(c1[2] - c2[2]));
+    }
+
+    async function processImage() {
+        setStatus('Processing...');
+        paletteEl.innerHTML = '';
+        generateBtn.disabled = true;
+
+        const MAX_W = 800;
+        const scale = loadedImage.naturalWidth > MAX_W ? MAX_W / loadedImage.naturalWidth : 1;
+        const w = Math.round(loadedImage.naturalWidth * scale);
+        const h = Math.round(loadedImage.naturalHeight * scale);
+        canvasInput.width = w; canvasInput.height = h;
+        canvasInput.getContext('2d').drawImage(loadedImage, 0, 0, w, h);
+
+        const mats = [];
+        try {
+            const srcRgba = cv.imread(canvasInput); mats.push(srcRgba);
+            const srcBgr = new cv.Mat(); mats.push(srcBgr);
+            cv.cvtColor(srcRgba, srcBgr, cv.COLOR_RGBA2BGR);
+
+            setStatus('Generating line art...');
+            const gray = new cv.Mat(); mats.push(gray);
+            const blurred = new cv.Mat(); mats.push(blurred);
+            const edges = new cv.Mat(); mats.push(edges);
+            cv.cvtColor(srcBgr, gray, cv.COLOR_BGR2GRAY);
+            
+            const difficulty = difficultyEl.value;
+            let blurSize, dilateSize, colorTolerance, minAreaForNumbering;
+            if (difficulty === 'easy') {
+                blurSize = new cv.Size(5, 5); dilateSize = new cv.Size(4, 4); colorTolerance = 45; minAreaForNumbering = 100;
+            } else if (difficulty === 'hard') {
+                blurSize = new cv.Size(3, 3); dilateSize = new cv.Size(2, 2); colorTolerance = 20; minAreaForNumbering = 20;
+            } else { // medium
+                blurSize = new cv.Size(3, 3); dilateSize = new cv.Size(3, 3); colorTolerance = 30; minAreaForNumbering = 50;
+            }
+            
+            cv.GaussianBlur(gray, blurred, blurSize, 0, 0, cv.BORDER_DEFAULT);
+            const med = new cv.Mat(); mats.push(med);
+            cv.medianBlur(gray, med, 3);
+            const sigma = 0.33;
+            const medianValue = Array.from(med.data).sort((a,b) => a-b)[Math.floor(med.data.length / 2)];
+            const lowerThreshold = Math.max(0, (1.0 - sigma) * medianValue);
+            const upperThreshold = Math.min(255, (1.0 + sigma) * medianValue);
+            cv.Canny(blurred, edges, lowerThreshold, upperThreshold);
+
+            const kernel = cv.getStructuringElement(cv.MORPH_RECT, dilateSize); mats.push(kernel);
+            cv.dilate(edges, edges, kernel);
+            
+            setStatus('Finding color regions...');
+            const contours = new cv.MatVector();
+            const hierarchy = new cv.Mat(); mats.push(hierarchy);
+            cv.findContours(edges, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+            
+            const finalRegions = [];
+            for (let i = 0; i < contours.size(); i++) {
+                const cnt = contours.get(i);
+                const area = cv.contourArea(cnt);
+                if (area >= minAreaForNumbering && hierarchy.intPtr(0, i)[3] !== -1) {
+                    const mask = new cv.Mat(h, w, cv.CV_8UC1, new cv.Scalar(0));
+                    cv.drawContours(mask, contours, i, new cv.Scalar(255), cv.FILLED);
+                    const meanColor = cv.mean(srcBgr, mask);
+                    mask.delete();
+                    const avgColor = [Math.round(meanColor[0]), Math.round(meanColor[1]), Math.round(meanColor[2])];
+                    if (!(avgColor[0] > 240 && avgColor[1] > 240 && avgColor[2] > 240)) {
+                        const M = cv.moments(cnt);
+                        if (M.m00 !== 0) {
+                            const cx = Math.floor(M.m10 / M.m00);
+                            const cy = Math.floor(M.m01 / M.m00);
+                            finalRegions.push({ centroid: { cx, cy }, avgColor, area });
+                        }
+                    }
+                }
+                cnt.delete();
+            }
+            contours.delete();
+            
+            setStatus('Grouping colors & numbering...');
+            colorGroups = [];
+            for (const region of finalRegions) {
+                let foundGroup = false;
+                for (const group of colorGroups) {
+                    if (colorDistance(region.avgColor, group.avgColor) < colorTolerance) {
+                        group.regions.push(region); foundGroup = true; break;
+                    }
+                }
+                if (!foundGroup) {
+                    colorGroups.push({ avgColor: region.avgColor, regions: [region] });
+                }
+            }
+            
+            setStatus('Drawing final result...');
+            const finalLineArt = new cv.Mat(); mats.push(finalLineArt);
+            cv.bitwise_not(edges, finalLineArt);
+            const finalLineArtRgba = new cv.Mat(); mats.push(finalLineArtRgba);
+            cv.cvtColor(finalLineArt, finalLineArtRgba, cv.COLOR_GRAY2RGBA);
+
+            canvasOutput.width = w; canvasOutput.height = h;
+            const outCtx = canvasOutput.getContext('2d');
+            outCtx.fillStyle = 'white'; outCtx.fillRect(0, 0, w, h);
+            cv.imshow(canvasOutput, finalLineArtRgba);
+            
+            resultOriginalCanvas.width = w; resultOriginalCanvas.height = h;
+            resultOriginalCanvas.getContext('2d').drawImage(canvasInput, 0, 0, w, h);
+
+            colorGroups.forEach((group, index) => {
+                const num = index + 1;
+                const [b, g, r] = group.avgColor;
+                const hex = '#' + ((1<<24) | (r<<16) | (g<<8) | b).toString(16).slice(1).toUpperCase();
+                const item = document.createElement('div');
+                item.className = 'flex items-center gap-2 p-2 bg-gray-100 rounded-md shadow-sm';
+                item.innerHTML = `<div class="w-7 h-6 rounded border border-gray-400" style="background:${hex}"></div><div class="font-mono text-sm">${num} ${hex}</div>`;
+                paletteEl.appendChild(item);
+
+                group.regions.forEach(region => {
+                    const { cx, cy } = region.centroid;
+                    const fontSize = Math.max(10, Math.min(20, Math.round(Math.sqrt(region.area) / 8)));
+                    outCtx.font = `bold ${fontSize}px Arial`;
+                    outCtx.textAlign = 'center'; outCtx.textBaseline = 'middle';
+                    outCtx.lineWidth = Math.max(3, Math.round(fontSize / 7)); 
+                    outCtx.strokeStyle = 'white';
+                    outCtx.fillStyle = 'black';
+                    outCtx.strokeText(String(num), cx, cy);
+                    outCtx.fillText(String(num), cx, cy);
+                });
+            });
+            
+            loadingEl.classList.add('hidden');
+            resultEl.classList.remove('hidden');
+
+        } finally {
+            try { for (let m of mats) { if (m && !m.isDeleted()) m.delete(); } } catch(e){}
+            generateBtn.disabled = false;
+        }
+    }
     </script>
 </body>
 </html>
